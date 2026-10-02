@@ -1,13 +1,28 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 kikspace
 """
-RCPT TO user enumeration tool
-
-Проверка списока имён через RCPT TO на одном SMTP-хосте, используя одну
-MAIL FROM транзакцию, и сохраняя подтверждённых пользователей в файл.
-
+RCPT TO user enumeration tool (SMTP pentesting methodology).
+ 
+Проверяет список имён через RCPT TO на одном SMTP-хосте, используя одну
+MAIL FROM транзакцию, и сохраняет подтверждённые (2xx) адреса в файл.
+ 
 Использование:
     python3 rcpt_enum.py -ip <IP> -p <port> -d <domain> -w <wordlist> -o <outfile>
+ 
+Author:   kikspace
+Version:  1.0.0
+License:  MIT
+ 
+Disclaimer:
+    Инструмент предназначен исключительно для авторизованного тестирования
+    на проникновение в рамках согласованного скоупа (ROE/SOW). Использование
+    против систем без явного разрешения является незаконным.
 """
+ 
+__author__ = "kikspace"
+__version__ = "1.0.0"
+__license__ = "MIT"
 
 import argparse
 import socket
