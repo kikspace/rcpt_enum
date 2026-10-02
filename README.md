@@ -37,19 +37,22 @@ python3 rcpt_enum.py -ip <IP> -d <DOMAIN> -w <WORDLIST> -o <OUTFILE> [опции
 | `-o`, `--outfile` | Файл для сохранения подтверждённых адресов (дозапись) |
 
 ### Опциональные параметры
-
+ 
 | Флаг | По умолчанию | Описание |
 |---|---|---|
-| `-p`, `--port` | `25` | Порт SMTP |
-| `--helo` | `mail.test.local` | FQDN-имя для команды EHLO (должно содержать точку — иначе сервер отклонит HELO как невалидный) |
-| `--mailfrom` | `test@test.local` | Адрес отправителя для MAIL FROM |
-| `--delay` | `0.5` | Задержка между запросами RCPT TO (сек.) — снижает риск сработать на анти-enum/rate-limit защиту |
-| `--timeout` | `10` | Таймаут ожидания ответа от сокета (сек.) |
+| `‑p`, `‑‑port` | `25` | Порт SMTP |
+| `‑‑helo` | `mail.test.local` | FQDN-имя для команды EHLO (должно содержать точку — иначе сервер отклонит HELO как невалидный) |
+| `‑‑mailfrom` | `test@test.local` | Адрес отправителя для MAIL FROM |
+| `‑‑delay` | `0.5` | Задержка между запросами RCPT TO (сек.) — снижает риск сработать на анти-enum/rate-limit защиту |
+| `‑‑timeout` | `10` | Таймаут ожидания ответа от сокета (сек.) |
+ 
+
 
 ### Пример
 
 ```bash
-python3 rcpt_enum.py -ip 192.168.0.100 -p 25 -d lab.loc -w users.txt -o valid_users.txt ```
+python3 rcpt_enum.py -ip 192.168.0.100 -p 25 -d lab.loc -w users.txt -o valid_users.txt
+```
 
 Файл `users.txt` — простой текстовый список, например:
 ```
